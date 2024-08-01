@@ -1,5 +1,5 @@
 import ISpot from '../../interfaces/ISpot';
-import './card.css';
+import '../../styles/card.css';
 
 type CardProps = {
   spot: ISpot[];
