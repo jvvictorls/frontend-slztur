@@ -1,4 +1,4 @@
-import Card from '../components/Card/card';
+import Card from '../components/card';
 import { getSpots } from '../service/requests';
 import { useEffect, useState } from 'react';
 

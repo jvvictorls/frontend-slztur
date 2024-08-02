@@ -1,6 +1,5 @@
 .header-container {
   display: flex;
-  justify-content: space-evenly;
 }
 
 .header-container li {
@@ -22,8 +21,6 @@
   display: flex;
   min-height: 100%;
   width: 50%;
-  
-
 }
 
 .menu > ul > li {
