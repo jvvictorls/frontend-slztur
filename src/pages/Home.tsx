@@ -54,6 +54,7 @@ function Home() {
                   key={destination.key}
                   src={destination.image}
                   text={destination.type}
+                  filter={destination.type}
                 />
               ))
             : destinations.map((destination) => (
@@ -61,6 +62,7 @@ function Home() {
                   key={destination.key}
                   src={destination.image}
                   text={destination.type}
+                  filter={destination.type}
                 />
               ))}
         </div>
