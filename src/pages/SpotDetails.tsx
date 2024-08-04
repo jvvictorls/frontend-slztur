@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import ISpot from '../interfaces/ISpot';
 import { getSpotById } from '../service/requests';
 import '../styles/spotDetails.css';
-import Map from '../components/map';
+import Map from '../components/Map';
 
 function SpotDetails() {
   const { id } = useParams<{ id: string }>();
