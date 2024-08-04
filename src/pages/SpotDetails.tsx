@@ -3,16 +3,18 @@ import { useState, useEffect } from 'react';
 import ISpot from '../interfaces/ISpot';
 import { getSpotById } from '../service/requests';
 import '../styles/spotDetails.css';
+import Map from '../components/map';
 
 function SpotDetails() {
   const { id } = useParams<{ id: string }>();
   const [data, setData] = useState<ISpot | null>({} as ISpot | null);
+  console.log(data);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!id) return navigate('/spots');
     getSpotById(id).then((spot) => setData(spot));
-  });
+  }, [id, navigate]);
 
   if (!data) {
     return <div>Loading...</div>;
@@ -29,18 +31,7 @@ function SpotDetails() {
           <div className="description">
             <p>{data.description}</p>
           </div>
-          <div className="spot-city">
-            <h3>Cidade</h3>
-            <p>{data.city}</p>
-          </div>
-          <div className="spot-type">
-            <h3>Tipo:</h3>
-            <p>{data.type}</p>
-          </div>
-          <div className="spot-tips">
-            <h3>Dicas:</h3>
-            <p>{data.tips}</p>
-          </div>
+          <Map lat={data.latitude} lng={data.longitude} />
         </div>
       </div>
     </div>
